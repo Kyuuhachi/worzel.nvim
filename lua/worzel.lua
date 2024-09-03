@@ -240,21 +240,19 @@ M.colors = scheme(function(c)
 	LualineTerminal = { fg = C.night1, bg = C.aurora4 }
 	LualineInactive = { fg = C.night0, bg = C.night4 }
 
-	Rainbow1 = { fg = "#CC8888" }
-	Rainbow2 = { fg = "#CCCC88" }
-	Rainbow3 = { fg = "#88CC88" }
-	Rainbow4 = { fg = "#88CCCC" }
-	Rainbow5 = { fg = "#8888CC" }
-	Rainbow6 = { fg = "#CC88CC" }
+	RainbowDelimiterRed    = { fg = "#CC8888" }
+	RainbowDelimiterOrange = { fg = "#CCAA88" }
+	RainbowDelimiterYellow = { fg = "#CCCC88" }
+	RainbowDelimiterGreen  = { fg = "#88CC88" }
+	RainbowDelimiterCyan   = { fg = "#88CCCC" }
+	RainbowDelimiterBlue   = { fg = "#8888CC" }
+	RainbowDelimiterViolet = { fg = "#CC88CC" }
 end)
 
 function M.apply()
 	vim.cmd[[hi clear]]
 	for group, color in pairs(M.colors) do
 		vim.api.nvim_set_hl(0, group, color)
-	end
-	if vim.g.rainbow_delimiters then
-		vim.g.rainbow_delimiters.highlight = { "Rainbow1", "Rainbow2", "Rainbow3", "Rainbow4", "Rainbow5", "Rainbow6" }
 	end
 end
 
